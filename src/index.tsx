@@ -10,6 +10,7 @@ import {
   Routes,
 } from "react-router-dom";
 import SignUp from "./pages/SignUp/sign-up";
+import SignIn from "./pages/SignIn/sign-in";
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
@@ -17,6 +18,7 @@ root.render(
   <BrowserRouter>
     <Routes>
       <Route index element={<SignUp />}></Route>
+      <Route path="sign-in" element={<SignIn/>}></Route>
     </Routes>
   </BrowserRouter>
 );
