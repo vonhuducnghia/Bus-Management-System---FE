@@ -11,14 +11,19 @@ import {
 } from "react-router-dom";
 import SignUp from "./pages/SignUp/sign-up";
 import SignIn from "./pages/SignIn/sign-in";
+import Template from "./components/Template/template";
+import HomePage from "./pages/HomePage/home-page";
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <BrowserRouter>
     <Routes>
-      <Route index element={<SignUp />}></Route>
-      <Route path="sign-in" element={<SignIn/>}></Route>
+      <Route element={<Template />}>
+        <Route index element={<SignUp />}></Route>
+        <Route path="sign-in" element={<SignIn />}></Route>
+        <Route path="home-page" element={<HomePage />}></Route>
+      </Route>
     </Routes>
   </BrowserRouter>
 );
