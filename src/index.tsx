@@ -19,10 +19,10 @@ const root = ReactDOM.createRoot(
 root.render(
   <BrowserRouter>
     <Routes>
-      <Route element={<Template />}>
-        <Route index element={<SignUp />}></Route>
+      <Route path="/" element={<Template />}>
+        <Route index element={<HomePage />}></Route>
+        <Route path="sign-up" element={<SignUp />}></Route>
         <Route path="sign-in" element={<SignIn />}></Route>
-        <Route path="home-page" element={<HomePage />}></Route>
       </Route>
     </Routes>
   </BrowserRouter>

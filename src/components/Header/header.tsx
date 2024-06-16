@@ -38,7 +38,7 @@ const Header = () => {
           <Grid container sx={{ padding: "5px 0" }}>
             <Grid item xs={2}>
               <NavLink
-                to="home-page"
+                to="/"
                 className={({ isActive }) =>
                   isActive ? "nav-btn nav-btn-active" : "nav-btn"
                 }
@@ -48,7 +48,7 @@ const Header = () => {
             </Grid>
             <Grid item xs={2}>
               <NavLink
-                to={""}
+                to={"/sign-up"}
                 className={({ isActive }) =>
                   isActive ? " nav-btn nav-btn-active" : "nav-btn"
                 }
