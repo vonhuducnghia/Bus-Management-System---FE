@@ -68,7 +68,7 @@ const Header = () => {
             </Grid>
             <Grid item xs={2}>
               <NavLink
-                to={""}
+                to={"schedule"}
                 className={({ isActive }) =>
                   isActive ? "nav-btn nav-btn-active" : "nav-btn"
                 }
@@ -78,7 +78,7 @@ const Header = () => {
             </Grid>
             <Grid item xs={2}>
               <NavLink
-                to={""}
+                to={"about"}
                 className={({ isActive }) =>
                   isActive ? " nav-btn nav-btn-active" : "nav-btn"
                 }

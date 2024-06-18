@@ -13,6 +13,8 @@ import SignUp from "./pages/SignUp/sign-up";
 import SignIn from "./pages/SignIn/sign-in";
 import Template from "./components/Template/template";
 import HomePage from "./pages/HomePage/home-page";
+import About from "./pages/About/about";
+import Schedule from "./pages/Schedule/schedule";
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
@@ -23,6 +25,8 @@ root.render(
         <Route index element={<HomePage />}></Route>
         <Route path="sign-up" element={<SignUp />}></Route>
         <Route path="sign-in" element={<SignIn />}></Route>
+        <Route path="about" element={<About />}></Route>
+        <Route path="schedule" element={<Schedule />}></Route>
       </Route>
     </Routes>
   </BrowserRouter>

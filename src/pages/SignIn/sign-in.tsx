@@ -23,7 +23,7 @@ const SignIn = () => {
         }}
       >
         <Grid container sx={{ flex: 1 }}>
-          {/* <Grid item xs={6} sx={{ padding: "32px" }}>
+          <Grid item xs={6} sx={{ padding: "32px" }}>
             <Typography
               sx={{
                 fontSize: "64px",
@@ -96,8 +96,8 @@ const SignIn = () => {
             >
               @ 2023 ALL RIGHT RESERVED
             </Typography>
-          </Grid> */}
-          <Grid
+          </Grid>
+          {/* <Grid
             item
             xs={6}
             sx={{
@@ -136,7 +136,7 @@ const SignIn = () => {
             >
               @ 2023 ALL RIGHT RESERVED
             </Typography>
-          </Grid>
+          </Grid> */}
           <Grid
             item
             xs={6}

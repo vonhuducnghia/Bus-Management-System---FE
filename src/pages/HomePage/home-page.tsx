@@ -31,6 +31,7 @@ const HomePage = () => {
                 fontSize: "64px",
                 color: "#797979",
                 fontWeight: "Bold",
+                
               }}
             >
               Bus Management
