@@ -15,6 +15,8 @@ import Template from "./components/Template/template";
 import HomePage from "./pages/HomePage/home-page";
 import About from "./pages/About/about";
 import Schedule from "./pages/Schedule/schedule";
+import Payment from "./pages/Payment/payment";
+import SearchRoute from "./pages/SearchRoute/search-route";
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
@@ -27,6 +29,8 @@ root.render(
         <Route path="sign-in" element={<SignIn />}></Route>
         <Route path="about" element={<About />}></Route>
         <Route path="schedule" element={<Schedule />}></Route>
+        <Route path="/schedule/payment" element={<Payment />}></Route>
+        <Route path="search-route" element={<SearchRoute/>}></Route>
       </Route>
     </Routes>
   </BrowserRouter>

@@ -1,23 +1,86 @@
-import React, { useState } from "react";
-import { Button, Modal, Typography } from "antd";
+import * as React from "react";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import Modal from "@mui/material/Modal";
 import { NavLink } from "react-router-dom";
-type AuthModalProp = {
-  open: boolean;
-};
-const AuthModal = ({ open }: AuthModalProp) => {
-  return (
-    <>
-      <Modal
-        open={open}
-        
-      >
-        <Typography>Please </Typography>
-        <NavLink to={"sign-in"}>Sign in</NavLink>
-        <Typography>Don't have an account ? </Typography>
-        <NavLink to={"sign-up"}>Sign up</NavLink>
-      </Modal>
-    </>
-  );
-};
+import { colors } from "@mui/material";
+import { alignProperty } from "@mui/material/styles/cssUtils";
 
-export default AuthModal;
+const style = {
+  position: "absolute" as "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 587,
+  height: 361,
+  bgcolor: "black",
+  border: "2px solid #000",
+  boxShadow: 24,
+  padding: "125px 100px",
+};
+type AuthModalProp = {
+  openModal: boolean;
+  handleClosed: () => void;
+};
+export default function AuthModal({ openModal, handleClosed }: AuthModalProp) {
+  const [open, setOpen] = React.useState(false);
+
+  return (
+    <div>
+      <Modal
+        open={openModal}
+        onClose={handleClosed}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <Box  sx={{textAlign:"center"}}>
+            <Typography
+              sx={{
+                color: "white",
+                fontFamily: "Lato, sans-serif",
+                fontSize: "25px",
+              }}
+            >
+              Please{" "}
+              <NavLink
+                to="/sign-in"
+                style={{
+                  color: "white",
+                  textDecoration: "none",
+                  fontFamily: "Lato, sans-serif",
+                  fontSize: "25px",
+                  display: "inline-block",
+                }}
+              >
+                Sign in
+              </NavLink>
+            </Typography>
+
+            <Typography
+              sx={{
+                color: "white",
+                fontFamily: "Lato, sans-serif",
+                fontSize: "25px",
+              }}
+            >
+              Don't have an account ?{" "}
+              <NavLink
+                to="/sign-up"
+                style={{
+                  color: "white",
+                  textDecoration: "none",
+                  fontFamily: "Lato, sans-serif",
+                  fontSize: "25px",
+                }}
+              >
+                Sign up
+              </NavLink>
+            </Typography>
+          </Box>
+        </Box>
+      </Modal>
+    </div>
+  );
+}

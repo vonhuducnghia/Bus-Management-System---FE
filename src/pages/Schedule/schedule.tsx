@@ -5,11 +5,20 @@ import { Space, Table, Tag } from "antd";
 import type { TableProps } from "antd";
 import AuthModal from "../../components/AuthModal/auth-modal";
 import { useState } from "react";
+import BusDetailDrawer from "../../components/DrawerBusDetail/bus-detail-drawer";
 const Schedule = () => {
+  const [open, setOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-
+  const handleClose = () => setIsModalOpen(false);
   const showModal = () => {
     setIsModalOpen(true);
+  };
+  const showDrawer = () => {
+    setOpen(true);
+  };
+
+  const onClose = () => {
+    setOpen(false);
   };
   interface DataType {
     id: string;
@@ -19,7 +28,7 @@ const Schedule = () => {
     timeSlot: string;
     price: string;
   }
-  
+
   const columns: TableProps<DataType>["columns"] = [
     {
       title: "No ID",
@@ -36,7 +45,14 @@ const Schedule = () => {
             <Box sx={{ display: "flex" }}>
               {" "}
               <img src="./images/bus.png"></img>
-              <Typography sx={{ marginTop: "50px" }}>{record.bus}</Typography>
+              <Typography
+                sx={{ marginTop: "50px" }}
+                onClick={() => {
+                  showDrawer();
+                }}
+              >
+                {record.bus}
+              </Typography>
             </Box>
           </>
         );
@@ -214,7 +230,8 @@ const Schedule = () => {
       <Box sx={{ padding: " 50px 50px" }}>
         <Table columns={columns} dataSource={data} />;
       </Box>
-      <AuthModal open={isModalOpen} />
+      <AuthModal openModal={isModalOpen} handleClosed={handleClose} />
+      <BusDetailDrawer open={open} onClose={onClose} />
     </>
   );
 };
